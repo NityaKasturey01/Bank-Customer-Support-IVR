@@ -29,19 +29,39 @@ function onchangeLang(){
       };
     
       speechRecognition.onresult = (event) => {
-        let interim_transcript = "";
-    
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            final_transcript += event.results[i][0].transcript;
-          } else {
-            interim_transcript += event.results[i][0].transcript;
-          }
-        }
-    
-        document.querySelector("#queryID").innerHTML = final_transcript;
-        //document.querySelector("#interim").innerHTML = interim_transcript;
-      };
+			let interim_transcript = ''
+
+			for (let i = event.resultIndex; i < event.results.length; ++i) {
+				if (event.results[i].isFinal) {
+					final_transcript += event.results[i][0].transcript
+				} else {
+					interim_transcript += event.results[i][0].transcript
+				}
+			}
+
+			document.querySelector('#queryID').innerHTML = final_transcript
+
+			// Convertering string into lower case
+			final_transcript = final_transcript.toLowerCase()
+			// Checking the type
+			console.log(typeof final_transcript)
+			// Printing the recognised text
+			console.log(final_transcript)
+
+			// function for intent detection
+			function queryRespone(final_transcript) {
+				var words = final_transcript.split(' ')
+				for (var i = 0; i < words.length; i += 1) {
+					// Account Balance
+					if (words == 'balance' || 'account balance') {
+						console.log('Your current balance is x')
+					}
+				}
+			}
+      // Invoking the function
+			queryRespone(final_transcript)
+			//document.querySelector("#interim").innerHTML = interim_transcript;
+		};
     
       var Image_Id = document.getElementById('getImage');
 
@@ -69,9 +89,9 @@ function onchangeLang(){
         speechRecognition.stop();
       };
 
-
     } else {
       console.log("Speech Recognition Not Available");
     }
 }
+
 
