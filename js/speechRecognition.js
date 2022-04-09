@@ -77,7 +77,7 @@ function onchangeLang(){
 					else if (words.includes('request' || 'Cheque' || 'book')) {
 						console.log('Recognized: Block Debit Card');
             document.querySelector('#responseID').innerHTML =
-				'Request Cheque Book';
+				'Recognized: Request Cheque Book'
             break;
 					}
 					// Transfer to Operator
