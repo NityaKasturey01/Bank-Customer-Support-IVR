@@ -73,6 +73,13 @@ function onchangeLang(){
 				'Recognized: Block Debit Card';
             break;
 					}
+					// Request Cheque Book
+					else if (words.includes('request' || 'Cheque' || 'book')) {
+						console.log('Recognized: Block Debit Card');
+            document.querySelector('#responseID').innerHTML =
+				'Request Cheque Book';
+            break;
+					}
 					// Transfer to Operator
 					else if (words.includes('transfer' || 'operator' || 'call' || 'talk')) {
 						console.log('Recognized: Transfer to Operator');
