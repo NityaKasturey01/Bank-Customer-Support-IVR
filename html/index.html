@@ -12,44 +12,62 @@
     }
     </style>
     <body>
-      <nav class="navbar navbar-dark bg-primary">
+      <nav class="navbar navbar-dark bg-secondary">
         <span class="navbar-brand mb-0 h1" style="margin-left: 20px;">IVR (Bank Customer Support)</span>
       </nav>
       <div class="container">
         <div class="row" style="height: 100%;">
-          <div class="col-sm-4" style="border-right: 2px solid rgb(143, 136, 136);">
+          <div class="col-sm-4" style="border-right: 1px solid rgb(185, 185, 185)">
             <div style="margin-top: 30%;"><img src="../img/Logo.png" style="display: block;
               margin-left: auto;margin-right: auto;width: 30%;"/></div>
           </div>
           <div class="col-sm-8">
-            <div>
-              <div class="container" style="border: 1px solid gray; height: 10%; border-radius: 8px;">
-                <span id="final" class="text-secondary"></span>
-                <span id="interim" class="text-secondary"></span>
+            <div class="row" style="margin: 5% 5% 0% 5%;">
+              <div class="col-2" style="border-left: solid black 2px;border-top: solid black 2px;
+              padding: 6px;background-color: rgb(245, 245, 245);">
+                <b>Query:</b>
               </div>
-              
-            </div>
-              <div class="row" style="margin-top:310px;">
-                <div class="col">
-                  <hr style="color: rgb(39, 36, 36);">
-                </div>
-                <div class="col">
-                  <img class="grey" src="../img/mic.png" width="25%" style="display: block;margin: 0 auto;"/><br>
-                  <p id="listentingText" class="lead text-secondary" style="display: none;margin-left: 32%;">Listenting ...</p>
-                  <div class="mt-3">
-                    <button style="margin-left: 26%;" class="btn btn-success" id="start">Start</button>
-                    <button class="btn btn-danger" id="stop">Stop</button>
-                   
-                  </div>
-                </div>
+              <div class="col-10" style="border-right: solid black 2px;border-top: solid black 2px;
+              background-color: rgb(245, 245, 245);;padding: 6px;">
                 
+              </div>
+            </div>
+            <div class="row" style="margin: 0% 5% 0% 5%;">
+              <div class="col-2" style="border-left: solid black 2px;border-bottom: solid black 2px;
+              padding: 6px;background-color: white;">
+                <b>Response:</b>
+              </div>
+              <div class="col-10" style="border-right: solid black 2px;padding: 6px;
+              border-bottom: solid black 2px;background-color: white;">
+                
+              </div>
+            </div>
+              <div class="row" style="margin-top:210px;">
                 <div class="col">
-                  <hr>
+                  <hr style="border: 2px solid black;">
+                </div>
+                <div class="col">
+                  <img onclick="imagefun()" id="getImage" src="../img/mic.png" width="25%" style="display: block;margin: 0 auto;"/><br>
+                  <div style="text-align: center;">I'm Listening...</div>
+                </div>
+                <div class="col">
+                  <hr style="border: 2px solid black;">
                 </div>
               </div>
           </div>
         </div>
       </div>
     </body>
+    <script language="javascript">
+      function imagefun() {
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("../img/mic.png")) {
+                Image_Id.src = "../img/red-mic.png";
+            }
+            else {
+                Image_Id.src = "../img/mic.png";
+            }
+        } 
+  </script>
     <script src="../js/speechRecognition.js"></script>
 </html>
