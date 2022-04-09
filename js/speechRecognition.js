@@ -51,10 +51,30 @@ function onchangeLang(){
 			// function for intent detection
 			function queryRespone(final_transcript) {
 				var words = final_transcript.split(' ')
+        console.log(words);
 				for (var i = 0; i < words.length; i += 1) {
 					// Account Balance
-					if (words == 'balance' || 'account balance') {
-						console.log('Your current balance is x')
+					if (words.includes('balance' || 'account')) {
+						console.log('Recognized: Account Balance');
+            break;
+					}
+					// Last 5 transactions
+					else if (words.includes('last' && 'transactions')) {
+						console.log('Recognized: Last 5 transactions');
+            break;
+					}
+					// Block Debit Card
+					else if (words.includes('block' && ('debit' || 'card'))) {
+						console.log('Recognized: Block Debit Card');
+            break;
+					}
+					// Transfer to Operator
+					else if (words.includes('transfer' || 'operator')) {
+						console.log('Recognized: Transfer to Operator');
+            break;
+					} else {
+						console.log('Not Recognized: Invalid Query');
+            break;
 					}
 				}
 			}
