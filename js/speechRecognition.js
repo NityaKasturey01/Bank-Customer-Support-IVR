@@ -67,18 +67,17 @@ function onchangeLang(){
             break;
 					}
 					// Block Debit Card
-					else if (words.includes('block' && ('debit' || 'card'))) {
+					else if (words.includes('block' && ('debit' || 'credit' || 'card'))) {
 						console.log('Recognized: Block Debit Card');
             document.querySelector('#responseID').innerHTML =
 				'Recognized: Block Debit Card';
             break;
 					}
 					// Transfer to Operator
-					else if (words.includes('transfer' || 'operator')) {
+					else if (words.includes('transfer' || 'operator' || 'call' || 'talk')) {
 						console.log('Recognized: Transfer to Operator');
             document.querySelector('#responseID').innerHTML =
 				'Recognized: Transfer to Operator';
-            break;
             break;
 					} else {
 						console.log('Not Recognized: Invalid Query');
