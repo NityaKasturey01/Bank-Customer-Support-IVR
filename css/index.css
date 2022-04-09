@@ -1,7 +1,8 @@
 .container {
-    background: rgb(169, 255, 255);
+    background: #ffffcc;
     border-radius: 3px;
-    border:black solid 2px;
+    border:rgb(185, 185, 185) solid 1px;
     margin-top: 50px;
-    height: 80%;
+    height: 75%;
+    font-family: Roboto;
     }
