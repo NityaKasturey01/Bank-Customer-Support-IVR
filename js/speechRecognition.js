@@ -56,21 +56,29 @@ function onchangeLang(){
 					// Account Balance
 					if (words.includes('balance' || 'account')) {
 						console.log('Recognized: Account Balance');
+            document.querySelector('#responseID').innerHTML = "Recognized: Account Balance";
             break;
 					}
 					// Last 5 transactions
 					else if (words.includes('last' && 'transactions')) {
 						console.log('Recognized: Last 5 transactions');
+            document.querySelector('#responseID').innerHTML =
+				'Recognized: Last 5 transactions'
             break;
 					}
 					// Block Debit Card
 					else if (words.includes('block' && ('debit' || 'card'))) {
 						console.log('Recognized: Block Debit Card');
+            document.querySelector('#responseID').innerHTML =
+				'Recognized: Block Debit Card';
             break;
 					}
 					// Transfer to Operator
 					else if (words.includes('transfer' || 'operator')) {
 						console.log('Recognized: Transfer to Operator');
+            document.querySelector('#responseID').innerHTML =
+				'Recognized: Transfer to Operator';
+            break;
             break;
 					} else {
 						console.log('Not Recognized: Invalid Query');
